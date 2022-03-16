@@ -6,6 +6,63 @@ import java.util.Scanner;
 
 public class MainForVectorDim3 {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        VectorDim3 vec1;
+        VectorDim3 vec2;
+        VectorDim3 vec3;
+
+        try {
+            ArrayList<Float> v1 = new ArrayList<>();
+            System.out.println("Input parameters for vector 1:");
+            for (int i = 0; i < 6; i++) {
+                float elem = in.nextFloat();
+                v1.add(elem);
+            }
+            vec1 = new VectorDim3(v1.get(0), v1.get(1), v1.get(2), v1.get(3), v1.get(4), v1.get(5));
+        } catch (Exception e) {
+            in.nextLine();
+            System.out.println("Wrong input for vector 1!");
+            vec1 = new VectorDim3();
+        }
+
+        try {
+            ArrayList<Float> v2 = new ArrayList<>();
+            System.out.println("Input parameters for vector 2:");
+            for (int i = 0; i < 6; i++) {
+                float elem = in.nextFloat();
+                v2.add(elem);
+            }
+            vec2 = new VectorDim3(v2.get(0), v2.get(1), v2.get(2), v2.get(3), v2.get(4), v2.get(5));
+        } catch (Exception e) {
+            in.nextLine();
+            System.out.println("Wrong input for vector 2!");
+            vec2 = new VectorDim3();
+        }
+
+        try {
+            ArrayList<Float> v3 = new ArrayList<>();
+            System.out.println("Input parameters for vector 2:");
+            for (int i = 0; i < 6; i++) {
+                float elem = in.nextFloat();
+                v3.add(elem);
+            }
+            vec3 = new VectorDim3(v3.get(0), v3.get(1), v3.get(2), v3.get(3), v3.get(4), v3.get(5));
+        } catch (Exception e) {
+            in.nextLine();
+            System.out.println("Wrong input for vector 2!");
+            vec3 = new VectorDim3();
+        }
+
+        System.out.println("First vector: "+vec1);
+        System.out.println("Second vector: "+vec2);
+
+        vec1.isOrthogonal(vec2);
+        vec1.isCrossed(vec2, 0.5f);
+        vec1.compareVectors(vec2);
+        vec1.areComplanar(vec2, vec3);
+
+
+        /*
 
         VectorDim3 vec1 = new VectorDim3(0, 1, 0, 0, 0, 0);
         VectorDim3 vec2 = new VectorDim3(0, 0, 0, 1, 0, 1);
@@ -60,5 +117,8 @@ public class MainForVectorDim3 {
                 }
             }
         }
+    }
+
+         */
     }
 }

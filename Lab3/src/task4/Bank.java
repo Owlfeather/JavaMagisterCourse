@@ -59,9 +59,9 @@ public class Bank {
     public String toString() {
         return "Bank{" +
                 "account_client=" + account_client +
-                ", account_sum=" + account_sum +
-                ", account_card=" + account_card +
-                ", card_active=" + card_active +
+                "\n   account_sum=" + account_sum +
+                "\n   account_card=" + account_card +
+                "\n   card_active=" + card_active +
                 '}';
     }
 }

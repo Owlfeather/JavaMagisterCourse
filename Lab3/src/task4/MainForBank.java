@@ -21,16 +21,19 @@ public class MainForBank {
         bank.addCard(6, 773);
         bank.addMoney(6, 100);
 
+        System.out.println("Added clients:");
         System.out.println(bank);
 
         bank.payOrder(4, 5000);
         bank.switchToAccount(4, 5, 1000);
 
+        System.out.println("Payments are done:");
         System.out.println(bank);
 
         bank.blockCard(129);
         bank.cancelAccount(6);
 
+        System.out.println("Card blocked and account canceled:");
         System.out.println(bank);
 
         bank.payOrder(4, 10000000);
