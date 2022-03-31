@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class MainForPatient {
     public static void main(String[] args) {
 
-        Patient[] patientsArray = createPatientsArray();
+        Patient[] patientsArray = new Patient[0];
+        try {
+            patientsArray = createPatientsArray();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println("Patients:");
         for (Patient p: patientsArray) {
             System.out.println(p);
@@ -23,10 +28,9 @@ public class MainForPatient {
         for (Patient p: patientsInRange) {
             System.out.println(p);
         }
-
     }
 
-    private static Patient[] createPatientsArray(){
+    private static Patient[] createPatientsArray() throws Exception {
         Patient p1 = new Patient(1,"Ivan", "Ivanov", "Ivanovich", "House 5", "8-968-374-26-47", 132, "Diabetes");
         Patient p2 = new Patient(2,"Petr", "Petrov", "Petrovich", "House 3", "8-969-375-27-74", 148, "COVID-19");
         Patient p3 = new Patient(3,"Dmitry", "Smirnov", "Ivanovich", "House 9", "8-977-234-86-07", 119, "Diabetes");

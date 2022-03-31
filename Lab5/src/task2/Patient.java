@@ -1,5 +1,7 @@
 package task2;
 
+import java.util.regex.Pattern;
+
 public class Patient {
     private  int id;
     private String name;
@@ -13,7 +15,23 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(int id, String name, String surname, String lastname, String address, String phone, int cardNumber, String diagnosis) {
+    public Patient(int id, String name, String surname, String lastname, String address, String phone, int cardNumber, String diagnosis) throws Exception {
+        if (id < 0) {
+            throw new Exception("Patient exception : wrong id!");
+        }
+        if ((cardNumber < 100) || (cardNumber > 999)) {
+            throw new Exception("Patient exception : wrong card number!");
+        }
+        if ((name.equals("")) || (surname.equals("")) || (lastname.equals(""))) {
+            throw new Exception("Patient exception : empty name/surname/lastname!");
+        }
+        if (!Pattern.matches("^8-9\\d{2}-\\d{3}-\\d{2}-\\d{2}", phone)) {
+            throw new Exception("Patient exception : wrong phone number!");
+        }
+        if (diagnosis.equals("")) {
+            throw new Exception("Patient exception : no diagnosis!");
+        }
+
         this.id = id;
         this.name = name;
         this.surname = surname;
