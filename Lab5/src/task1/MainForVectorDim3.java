@@ -41,7 +41,7 @@ public class MainForVectorDim3 {
 
         try {
             ArrayList<Float> v3 = new ArrayList<>();
-            System.out.println("Input parameters for vector 2:");
+            System.out.println("Input parameters for vector 3:");
             for (int i = 0; i < 6; i++) {
                 float elem = in.nextFloat();
                 v3.add(elem);

@@ -1,9 +1,6 @@
 package task2;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 
 enum Sex {
     MAN,
@@ -80,7 +77,7 @@ public class YoungestPersonWithE {
 
         System.out.println("Collection: ");
         System.out.println(peoples);
-        People min_with_e = peoples.stream().filter(s -> s.getName().toLowerCase(Locale.ROOT).contains("e")).min((p1, p2) -> p1.getAge() - (p2.getAge())).get();
+        People min_with_e = peoples.stream().filter(s -> s.getName().toLowerCase(Locale.ROOT).contains("e")).min(Comparator.comparingInt(People::getAge)).get();
         System.out.println("Youngest person with e letter:");
         System.out.println(min_with_e);
     }
